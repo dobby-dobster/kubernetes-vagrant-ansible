@@ -1,0 +1,6 @@
+---
+    - hosts: all
+      become: false
+      tasks:
+      - name: Create Nginx deployment
+        command: kubectl apply -f /tmp/deployment.yaml
