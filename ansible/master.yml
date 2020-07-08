@@ -100,9 +100,13 @@
          - cp -i /etc/kubernetes/admin.conf /home/vagrant/.kube/config
          - chown vagrant:vagrant /home/vagrant/.kube/config
 
-      - name: Install calico pod network
+      - name: Install calico pod network1
         become: false
-        command: kubectl create -f https://docs.projectcalico.org/v3.9/getting-started/kubernetes/installation/hosted/calico.yaml
+        command: kubectl create -f https://docs.projectcalico.org/manifests/tigera-operator.yaml
+
+      - name: Install calico pod network2
+        become: false
+        command: kubectl create -f https://docs.projectcalico.org/manifests/custom-resources.yaml
     
       - name: Generate join command
         command: kubeadm token create --print-join-command
