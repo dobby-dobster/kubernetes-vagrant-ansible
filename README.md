@@ -1,6 +1,6 @@
 # Kubernetes cluster provided by Vagrant & Ansible
 
-Run a Kubernetes cluster locally using Vagrant and Ansible.
+Run a Kubernetes cluster locally using Vagrant and Ansible. Includes a Nginx deployment. 
 
 This will create and setup one Kubernetes master and $NodeCount number of nodes. 
 'NodeCount' can be changed inside Vagrantfile to define number of nodes. Default is 3.
@@ -12,7 +12,7 @@ This will create and setup one Kubernetes master and $NodeCount number of nodes.
 
 # Requirements
 
-Install [Vagrant][vagranthome] on your machine.
+Install Vagrant on your machine.
 
 # Setup
 
@@ -28,6 +28,12 @@ vagrant up
 
 ```
 vagrant ssh <master|node1>
+```
+
+To list the nginx pods, run the below on the master.
+
+```
+kubectl get pods
 ```
 
 To destroy the environment:
