@@ -41,5 +41,3 @@ To destroy the environment:
 ```
 vagrant destroy
 ```
-
-[vagranthome]: https://www.vagrantup.com/docs/installation/  "Vagrant installation
